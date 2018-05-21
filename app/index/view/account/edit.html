@@ -1,0 +1,88 @@
+{layout name="common" /}
+
+    
+
+    <div class="statsRow titleArea">
+        <div class="wrapper">
+        
+            <div class="horControlB">
+                <ul>
+                    <li><a href="{:url('index')}" title=""><img src="__STATIC__/images/icons/control/16/database.png" alt=""><span>列表</span></a></li>
+                </ul>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="line"></div>
+    
+    <!-- Main content wrapper -->
+    <div class="wrapper">
+    
+        <!-- Note -->
+<!--         <div class="nNote nInformation hideit">
+            <p>
+                <strong>提示: </strong> 添加账号 [ <a href="ui_elements.html" title="">点击添加</a> ] 
+            </p>
+        </div> -->
+
+    <!--  -->
+<form id="validate" class="form" method="post" action="{:url('save')}">
+            <fieldset>
+                <div class="widget">
+                    <div class="title">
+                        <img src="__STATIC__/images/icons/dark/alert.png" alt="" class="titleIcon">
+                        <h6>添加账号</h6>
+                    </div>
+                    <input type="hidden" name="id" value="{$info.id}">
+                    <div class="formRow">
+                        <label>账号:<span class="req">*</span></label>
+                        <div class="formRight"><input type="text" class="validate[required]" name="username" id="username" value="{$info.username}"></div><div class="clear"></div>
+                    </div>
+                    <div class="formRow">
+                        <label>密码:<span class="req">*</span></label>
+                        <div class="formRight"><input type="password" class="validate[required]" name="password" id="password" value="{$info.password}"></div><div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>账号类型:<span class="req">*</span></label>
+                        <div class="formRight">
+                            <div class="floatL">
+                                <div class="selector" id="uniform-selectReq">
+                                    <span>选择</span>
+                                    <select name="type" id="selectReq" class="validate[required]" style="opacity: 0;">
+                                        <option value="">请选择</option>
+                                    
+                                        {volist name="cate" id="vo"}
+                                            <option value="{$vo.id}" {:$info.type == $vo.id ? 'selected="selected"' : null}>{$vo.name}</option>
+                                        {/volist}
+
+                                    </select>
+                                </div>
+                            </div> 
+                            
+                        </div><div class="clear"></div>
+                    </div>
+
+
+                    <div class="formRow">
+                        <label>备注:<span class="req">*</span></label>
+                        <div class="formRight"><textarea rows="8" cols="" name="desc" >{$info.desc}</textarea></div><div class="clear"></div>
+                    </div>
+
+                    <div class="formRow">
+                        <input class="blueB ml10 ui-wizard-content ui-formwizard-button" id="next1" value="重置" type="reset">
+                        <input type="submit" value="确定" class="redB">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
+            </fieldset>
+        </form>
+
+    <!--  -->
+
+
+    </div>
+    

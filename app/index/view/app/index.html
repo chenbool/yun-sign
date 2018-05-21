@@ -1,0 +1,160 @@
+{layout name="common" /}
+
+
+    <div class="statsRow titleArea">
+        <div class="wrapper">
+        
+            <div class="horControlB">
+                <ul>
+                    <li><a href="{:url('create')}" title=""><img src="__STATIC__/images/icons/control/16/hire-me.png" alt=""><span>添加</span></a></li>
+                    <li><a href="#" title=""><img src="__STATIC__/images/icons/control/16/pencil.png" alt=""><span>编辑</span></a></li>
+                </ul>
+            </div>
+        
+        </div>
+    </div>
+
+    
+    <div class="line"></div>
+
+
+    <div class="wrapper">
+    
+        <!-- Note -->
+        <div class="nNote nInformation hideit">
+            <p>
+                <strong>提示: </strong> 添加账号 [ <a href="{:url('App/create')}" class="tipS" original-title="点击添加">点击添加</a> ] 
+            </p>
+        </div>
+    
+
+
+            <div class=" widget" style="padding:5px;">
+                <div class="title">
+                    <img src="/static/images/icons/dark/money2.png" alt="" class="titleIcon">
+                    <h6>签到</h6>
+                </div>
+                <div class="wInvoice">
+                    <form action="{:url('sign')}" method="post" class="form">
+                        <fieldset>
+<!--                             <div class="formRow">
+                                <label>账号:</label>
+                                <div class="formRight"><input type="text" value=""></div>
+                                <div class="clear"></div>
+                            </div> -->
+                            <div class="formRow">
+                                <label>签到账号:<span class="req">*</span></label>
+                                <div class="formRight">
+                                    <div class="floatL">
+                                        <div class="selector" id="uniform-selectReq">
+                                            <span>选择</span>
+                                            <div class="selector" id="uniform-selectReq"><span>请选择</span><select name="username" id="selectReq" class="validate[required]" style="opacity: 0;">
+                                                <option value="">请选择</option>
+                                                {volist name="account_list" id="vo"}
+                                                    <option value="{$vo.id}"> [ {$vo.findCate.name} ] - {$vo.username}</option>
+                                                {/volist}
+                                            </select></div>
+                                        </div>
+                                    </div> 
+                                    
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>签到类型:<span class="req">*</span></label>
+                                <div class="formRight">
+                                    <div class="floatL">
+                                        <div class="selector" id="uniform-selectReq">
+                                            <span>选择</span>
+                                            <div class="selector" id="uniform-selectReq"><span>请选择</span><select name="type" id="selectReq" class="validate[required]" style="opacity: 0;">
+                                                <option value="">请选择</option>
+                                                    <option value="1">QQ空间</option>
+                                                    <option value="2">百度贴吧</option>
+                                            </select></div>
+                                        </div>
+                                    </div> 
+                                    
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="formRow">
+                                <!-- <input class="blueB ml10 ui-wizard-content ui-formwizard-button" id="next1" value="重置" type="reset"> -->
+                                <input type="submit" value="签到" class="redB">
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+        <!-- Media table -->
+        <div class="widget">
+            <div class="title">
+                <!-- <span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span> -->
+                <h6>列表</h6>
+            </div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <thead>
+                    <tr>
+                        <!-- <td><img src="/static/images/icons/tableArrows.png" alt="" /></td> -->
+                        <td class="sortCol header"><div>编号<span></span></div></td>
+                        <td>头像</td>
+                        <td class="sortCol header"><div>账号<span></span></div></td>
+                        <td class="sortCol header"><div>类型<span></span></div></td>
+                        <td class="sortCol header"><div>添加时间<span></span></div></td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="7">
+<!--                             <div class="itemActions">
+                                <label>操作:</label>
+                                <div class="selector" id="uniform-undefined"><span>选择...</span><select style="opacity: 0;">
+                                    <option value="">选择...</option>
+                                    <option value="Delete">删除</option>
+                                    <option value="Move">移动</option>
+                                </select></div>
+                            </div> -->
+                            <div class="tPagination">
+                                <ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="/account/index.html?page=2">2</a></li><li><a href="/account/index.html?page=3">3</a></li><li><a href="/account/index.html?page=4">4</a></li><li><a href="/account/index.html?page=5">5</a></li> <li><a href="/account/index.html?page=2">»</a></li></ul>                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+
+                                        <tr>
+                        <!-- <td><input type="checkbox" id="titleCheck2" name="checkRow" /></td> -->
+                        <td align="center" width="60">#1</td>
+                        <td align="center" style="border-left-color: rgb(203, 203, 203);">
+                                                            <a href="http://q2.qlogo.cn/headimg_dl?dst_uin=179766133&amp;spec=150" title="179766133" rel="lightbox">
+                                    <img src="http://q1.qlogo.cn/g?b=qq&amp;nk=179766133&amp;s=100&amp;t=20180303" alt="" height="35">
+        
+                                </a>
+                            
+                        </td>
+                        <td align="center"><a href="#" title="">179766133</a></td>
+                        <td align="center">QQ</td>
+                        <td align="center">2018-03-09 15:43:10</td>
+
+                        <td class="actBtns">
+                            <a href="/account/edit/id/1.html" class="tipS" original-title="编辑">
+                                <img src="/static/images/icons/edit.png" alt="">
+                                编辑
+                            </a>
+                            <a href="/account/delete/id/1.html" class="tipS" onclick="return confirm('真的要删除?')" original-title="删除">
+                                <img src="/static/images/icons/remove.png" alt="">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    
+    </div>

@@ -1,0 +1,71 @@
+{layout name="layout" /}
+
+<body class="nobg loginPage">
+
+<!-- Top fixed navigation -->
+<div class="topNav">
+    <div class="wrapper">
+        <div class="userNav">
+            <ul>
+                <li><a href="#" title=""><img src="__STATIC__/images/icons/topnav/mainWebsite.png" alt="" /><span>主页</span></a></li>
+                <li><a href="#" title=""><img src="__STATIC__/images/icons/topnav/profile.png" alt="" /><span>联系</span></a></li>
+                <li><a href="#" title=""><img src="__STATIC__/images/icons/topnav/messages.png" alt="" /><span>支持</span></a></li>
+                <li><a href="#" title=""><img src="__STATIC__/images/icons/topnav/settings.png" alt="" /><span>设置</span></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<!-- Main content wrapper -->
+<div class="loginWrapper">
+    <div class="loginLogo"><img src="__STATIC__/images/loginLogo.png" alt="" /></div>
+    <div class="widget">
+        <div class="title"><img src="__STATIC__/images/icons/dark/files.png" alt="" class="titleIcon" /><h6>登录</h6></div>
+        
+            <fieldset>
+            <form action="" id="validate" class="form" method="post">
+                <div class="formRow">
+                    <label for="login">账号:</label>
+                    <div class="loginInput"><input type="text" name="username" class="validate[required]" id="login" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="formRow">
+                    <label for="pass">密码:</label>
+                    <div class="loginInput"><input type="password" name="password" class="validate[required]" id="pass" /></div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+                <div class="loginControl">
+                    <div class="rememberMe"><input type="checkbox" id="remMe" name="remMe" checked="checked" /><label for="remMe">自动登录</label></div>
+                        <input type="button" value=" 登 录 " class="dredB logMeIn" onclick="submit()" />
+                    <div class="clear"></div>
+                </div>
+
+            </fieldset>
+        
+    </div>
+</div>    
+
+
+<script>
+function submit(){
+    var data = $("#validate").serializeArray();
+    $.post("{:url('login/login')}", data,function(data){
+        if (data.error > 0) {
+            $.jGrowl(data.msg);
+        } else {
+            $.jGrowl(data.msg)
+            var url = "{:url('index/index')}";
+            setTimeout(function(){
+                window.location.href = url;
+            }, 1000);
+        }
+         console.log(data);
+    }, "json"); 
+    return false; 
+}
+
+</script>

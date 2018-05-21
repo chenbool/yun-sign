@@ -1,0 +1,107 @@
+{include file="public/header" /}
+
+<body>
+<!-- Left side content -->
+<div id="leftSide" >
+    <div class="logo">
+        <center>
+        <a href="{:url('index/index')}">
+            <img src="http://q1.qlogo.cn/g?b=qq&nk={$u_info.qq}&s=100&t=20180303" alt="" style="border: 2px solid #cdcdcd;" width="100" />
+        </a>
+        </center>
+    </div>
+    
+    <div class="sidebarSep"></div>
+    <!-- 菜单 -->
+    {include file="public/menu" /}    
+
+</div>
+
+
+<!-- Right side -->
+<div id="rightSide">
+
+    <!-- Top fixed navigation -->
+    <div class="topNav">
+        <div class="wrapper">
+            <div class="welcome">
+                <a href="#" title=""><img src="__STATIC__/images/userPic.png" alt="" /></a>
+                <span>hi, {$u_info.nickname}!</span>
+            </div>
+            <div class="userNav">
+                <ul>
+                    <li class="dd"><a title=""><img src="__STATIC__/images/icons/topnav/settings.png" alt="" /><span>设置</span></a>
+                        <ul class="userDropdown">
+                            <li><a href="#" title="" class="sAdd">个人中心</a></li>
+                            <li><a href="#" title="" class="sInbox">自助商场</a></li>
+                            <li><a href="#" title="" class="sOutbox">添加挂机</a></li>
+                            <li><a href="#" title="" class="sTrash">邀请好友</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.html" title=""><img src="__STATIC__/images/icons/topnav/logout.png" alt="" /><span>退出</span></a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <!-- Responsive header 手机菜单 -->
+    <div class="resp">
+        <div class="smalldd">
+            <span class="goTo"><img src="__STATIC__/images/icons/light/home.png" alt="" />首页</span>
+            <ul class="smallDropdown">
+                <li><a href="index.html" title=""><img src="__STATIC__/images/icons/light/home.png" alt="" />Dashboard</a></li>
+                <li><a href="charts.html" title=""><img src="__STATIC__/images/icons/light/stats.png" alt="" />Statistics and charts</a></li>
+                <li><a href="#" title="" class="exp"><img src="__STATIC__/images/icons/light/pencil.png" alt="" />Forms stuff<strong>4</strong></a>
+                    <ul>
+                        <li><a href="forms.html" title="">Form elements</a></li>
+                        <li><a href="form_validation.html" title="">Validation</a></li>
+                        <li><a href="form_editor.html" title="">WYSIWYG and file uploader</a></li>
+                        <li class="last"><a href="form_wizards.html" title="">Wizards</a></li>
+                    </ul>
+                </li>
+                <li><a href="ui_elements.html" title=""><img src="__STATIC__/images/icons/light/users.png" alt="" />Interface elements</a></li>
+                <li><a href="tables.html" title="" class="exp"><img src="__STATIC__/images/icons/light/frames.png" alt="" />Tables<strong>3</strong></a>
+                    <ul>
+                        <li><a href="table_static.html" title="">Static tables</a></li>
+                        <li><a href="table_dynamic.html" title="">Dynamic table</a></li>
+                        <li class="last"><a href="table_sortable_resizable.html" title="">Sortable &amp; resizable tables</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" title="" class="exp"><img src="__STATIC__/images/icons/light/fullscreen.png" alt="" />Widgets and grid<strong>2</strong></a>
+                    <ul>
+                        <li><a href="widgets.html" title="">Widgets</a></li>
+                        <li class="last"><a href="grid.html" title="">Grid</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" title="" class="exp"><img src="__STATIC__/images/icons/light/alert.png" alt="" />Error pages<strong>6</strong></a>
+                    <ul class="sub">
+                        <li><a href="403.html" title="">403 page</a></li>
+                        <li><a href="404.html" title="">404 page</a></li>
+                        <li><a href="405.html" title="">405 page</a></li>
+                        <li><a href="500.html" title="">500 page</a></li>
+                        <li><a href="503.html" title="">503 page</a></li>
+                        <li class="last"><a href="offline.html" title="">Website is offline</a></li>
+                    </ul>
+                </li>
+                <li><a href="file_manager.html" title=""><img src="__STATIC__/images/icons/light/files.png" alt="" />File manager</a></li>
+                <li><a href="#" title="" class="exp"><img src="__STATIC__/images/icons/light/create.png" alt="" />Other pages<strong>3</strong></a>
+                    <ul>
+                        <li><a href="typography.html" title="">Typography</a></li>
+                        <li><a href="calendar.html" title="">Calendar</a></li>
+                        <li class="last"><a href="gallery.html" title="">Gallery</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="cLine"></div>
+    </div>
+    
+
+          
+        {__CONTENT__}
+
+    
+
+
+{include file="public/footer" /}
